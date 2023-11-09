@@ -16,6 +16,6 @@ for (const hoverColorCard of hoverColorCards) {
 
 for (const hoverColorCard of hoverColorCards) {
     hoverColorCard.addEventListener('mouseleave', function () {
-        hoverColorCard.style.backgroundColor = '#e2e8f0';
+        hoverColorCard.style.backgroundColor = '#f5d0fe';
     })
 }
