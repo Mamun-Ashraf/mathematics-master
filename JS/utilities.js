@@ -74,12 +74,22 @@ function solveProblem(btnSolveId, categoryNameId, unknownId1, unknownId2, unknow
         let solutionString1, solutionString2;
         switch (categoryName) {
             case 'Algebra':
-                const d = Math.pow(unknown2Value, 2) - (4 * unknown1Value * unknown3Value)
-                solutionString1 = (unknown2Value + Math.sqrt(d) / (2 * unknown1Value)).toFixed(3);
-                solutionString2 = (unknown2Value - Math.sqrt(d) / (2 * unknown1Value)).toFixed(3);
+                const d = Math.pow(unknown2Value, 2) - (4 * unknown1Value * unknown3Value);
+                if (d < 0) {
+                    alert('The Solution is not a Real Number')
+                }
+                else {
+                    solutionString1 = ((-unknown2Value + Math.sqrt(d)) / (2 * unknown1Value)).toFixed(3);
+                    solutionString2 = ((-unknown2Value - Math.sqrt(d)) / (2 * unknown1Value)).toFixed(3);
+                }
                 break;
             case 'Arithmetic':
-                solutionString1 = ((unknown2Value * 100) / unknown1Value).toFixed(3);
+                if (unknown1Value < 0 || unknown2Value < 0) {
+                    alert('Please make sure the value of y and z is a positive number')
+                }
+                else {
+                    solutionString1 = ((unknown2Value * 100) / unknown1Value).toFixed(3);
+                }
                 break;
             case 'Geometry':
                 solutionString1 = (Math.PI * Math.pow(unknown1Value, 2) * unknown2Value).toFixed(3);
@@ -90,7 +100,7 @@ function solveProblem(btnSolveId, categoryNameId, unknownId1, unknownId2, unknow
                 solutionString1 = (Math.sqrt(d1 + d2)).toFixed(3);
                 break;
             case 'Trigonometry':
-                solutionString1 = (unknown1Value * Math.tan(unknown2Value)).toFixed(3);
+                solutionString1 = (unknown1Value * Math.tan((unknown2Value * Math.PI) / 180)).toFixed(3);
                 break;
             default:
                 alert('Not a valid category');
@@ -139,7 +149,7 @@ function getCategoryInfo(categoryNameId, unknownId1, unknownId2, unknownId3, unk
 
 }
 
-// Add list of solutions to the 'calculate solution'
+// Add list of solutions to the 'Solved Result'
 
 function addSolveResult(solution1, categoryNameId, unknownId1, unknownId2, unknownId3, unknownId4) {
 
@@ -150,13 +160,13 @@ function addSolveResult(solution1, categoryNameId, unknownId1, unknownId2, unkno
 
     li.innerHTML = `
         <p class='font-bold'>
-        solution of ${categoryName} is : <span class='text-green-400 font-bold text-2xl'>${solution1} </span><span id='meterOrCm'>cm</span><sup>2, <br /> <span class='text-sm text-blue-400'>(when First value = ${unknown1Value} cm, Second value = ${unknown2Value} cm, third value = ${unknown3Value} cm and fourth value = ${unknown4Value})</span>
+        solution of ${categoryName} problem is : <span class='text-green-400 font-bold text-2xl'>${solution1} </span><span id='meterOrCm'>cm</span>, <br /> <span class='text-xs text-blue-400'>(when First value = ${unknown1Value} cm, Second value = ${unknown2Value} cm, third value = ${unknown3Value} cm and fourth value = ${unknown4Value})</span>
         </p>
-        <button id='btn-m-sq' class='bg-blue-400 text-white font-bold rounded px-2 py-1 my-2'>
-            Convert to m<sup>2
+        <button id='btn-meter' class='bg-blue-400 text-white font-bold rounded px-2 py-1 my-2'>
+            Convert to m
         </button>
-        <button id='btn-cm-sq' class='hidden bg-blue-400 text-white font-bold rounded px-2 py-1 my-2'>
-            Convert to cm<sup>2
+        <button id='btn-centimeter' class='hidden bg-blue-400 text-white font-bold rounded px-2 py-1 my-2'>
+            Convert to cm
         </button>
         <button id='btn-delete-solution' class='text-2xl font-bold text-red-500 bg-white rounded px-3 py-1 ml-6'>X</button>
     `
@@ -168,29 +178,29 @@ function addSolveResult(solution1, categoryNameId, unknownId1, unknownId2, unkno
         li.remove();
     })
 
-    // Implementing convert-button from squareCentimeter to squareMeter
+    // Implementing convert-button from Centimeter to Meter
 
-    const solutionInSquareMetersString = (solution1 / 10000).toFixed(3);
-    const solutionInSquareMeters = parseFloat(solutionInSquareMetersString);
-    const btnSqM = li.querySelector('#btn-m-sq');
-    btnSqM.addEventListener('click', function () {
-        btnSqM.classList.add('hidden');
-        const btnSqCm = li.querySelector('#btn-cm-sq');
-        btnSqCm.classList.remove('hidden');
-        li.querySelector('.text-green-400').textContent = solutionInSquareMeters;
+    const solutionInMetersString = (solution1 / 100).toFixed(3);
+    const solutionInMeters = parseFloat(solutionInMetersString);
+    const btnMeter = li.querySelector('#btn-meter');
+    btnMeter.addEventListener('click', function () {
+        btnMeter.classList.add('hidden');
+        const btnCentimeter = li.querySelector('#btn-centimeter');
+        btnCentimeter.classList.remove('hidden');
+        li.querySelector('.text-green-400').textContent = solutionInMeters;
         li.querySelector('#meterOrCm').textContent = ' m';
     })
 
-    // Implementing convert-button from squareMeter to squareCentimeter
+    // Implementing convert-button from Meter to Centimeter
 
-    const solutionInSquareCentimetersString = ((solution1 / 10000) * 10000).toFixed(3);
-    const solutionInSquareCentimeters = parseFloat(solutionInSquareCentimetersString);
-    const btnSqCm = li.querySelector('#btn-cm-sq');
-    btnSqCm.addEventListener('click', function () {
-        const btnSqM = li.querySelector('#btn-m-sq');
-        btnSqM.classList.remove('hidden');
-        btnSqCm.classList.add('hidden');
-        li.querySelector('.text-green-400').textContent = solutionInSquareCentimeters;
+    const solutionInCentimetersString = ((solution1 / 100) * 100).toFixed(3);
+    const solutionInCentimeters = parseFloat(solutionInCentimetersString);
+    const btnCentimeter = li.querySelector('#btn-centimeter');
+    btnCentimeter.addEventListener('click', function () {
+        const btnMeter = li.querySelector('#btn-meter');
+        btnMeter.classList.remove('hidden');
+        btnCentimeter.classList.add('hidden');
+        li.querySelector('.text-green-400').textContent = solutionInCentimeters;
         li.querySelector('#meterOrCm').textContent = ' cm';
     })
 }
