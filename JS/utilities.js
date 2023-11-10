@@ -72,40 +72,55 @@ function solveProblem(btnSolveId, categoryNameId, unknownId1, unknownId2, unknow
         let { categoryName, unknown1Value, unknown2Value, unknown3Value, unknown4Value } = getCategoryInfo(categoryNameId, unknownId1, unknownId2, unknownId3, unknownId4);
 
         let solutionString1, solutionString2;
-        switch (categoryName) {
-            case 'Algebra':
-                const d = Math.pow(unknown2Value, 2) - (4 * unknown1Value * unknown3Value);
-                if (d < 0) {
-                    alert('The Solution is not a Real Number')
-                }
-                else {
-                    solutionString1 = ((-unknown2Value + Math.sqrt(d)) / (2 * unknown1Value)).toFixed(3);
-                    solutionString2 = ((-unknown2Value - Math.sqrt(d)) / (2 * unknown1Value)).toFixed(3);
-                }
-                break;
-            case 'Arithmetic':
-                if (unknown1Value < 0 || unknown2Value < 0) {
-                    alert('Please make sure the value of y and z is a positive number')
-                }
-                else {
-                    solutionString1 = ((unknown2Value * 100) / unknown1Value).toFixed(3);
-                }
-                break;
-            case 'Geometry':
-                solutionString1 = (Math.PI * Math.pow(unknown1Value, 2) * unknown2Value).toFixed(3);
-                break;
-            case 'Coordinate Geometry':
-                const d1 = Math.pow((unknown1Value - unknown3Value), 2);
-                const d2 = Math.pow((unknown2Value - unknown4Value), 2);
-                solutionString1 = (Math.sqrt(d1 + d2)).toFixed(3);
-                break;
-            case 'Trigonometry':
-                solutionString1 = (unknown1Value * Math.tan((unknown2Value * Math.PI) / 180)).toFixed(3);
-                break;
-            default:
-                alert('Not a valid category');
-                break;
+        if (unknown1Value && unknown2Value) {
+            switch (categoryName) {
+                case 'Algebra':
+                    const d = Math.pow(unknown2Value, 2) - (4 * unknown1Value * unknown3Value);
+                    if (!unknown3Value) {
+                        alert('Please provide valid values');
+                    }
+                    else if (d > 0) {
+                        alert('The Solution is not a Real Number')
+                    }
+                    else {
+                        solutionString1 = ((-unknown2Value + Math.sqrt(d)) / (2 * unknown1Value)).toFixed(3);
+                        solutionString2 = ((-unknown2Value - Math.sqrt(d)) / (2 * unknown1Value)).toFixed(3);
+                    }
+                    break;
+                case 'Arithmetic':
+                    if (unknown1Value < 0 || unknown2Value < 0) {
+                        alert('Please make sure the value of y and z is a positive number')
+                    }
+                    else {
+                        solutionString1 = ((unknown2Value * 100) / unknown1Value).toFixed(3);
+                    }
+                    break;
+                case 'Geometry':
+                    solutionString1 = (Math.PI * Math.pow(unknown1Value, 2) * unknown2Value).toFixed(3);
+                    break;
+                case 'Coordinate Geometry':
+                    if (unknown3Value && unknown4Value) {
+                        const d1 = Math.pow((unknown1Value - unknown3Value), 2);
+                        const d2 = Math.pow((unknown2Value - unknown4Value), 2);
+                        solutionString1 = (Math.sqrt(d1 + d2)).toFixed(3);
+                    }
+                    else {
+                        alert('Please provide valid values');
+                    }
+                    break;
+                case 'Trigonometry':
+                    solutionString1 = (unknown1Value * Math.tan((unknown2Value * Math.PI) / 180)).toFixed(3);
+                    break;
+                default:
+                    alert('Not a valid category');
+                    break;
+            }
         }
+
+        else {
+            alert('Please provide valid values');
+        }
+
 
         if (solutionString1 || solutionString2) {
             const solution1 = parseFloat(solutionString1);
