@@ -46,10 +46,10 @@ updateCardsInputValue(false, 'btn-check-coordinate', 'coordinate-input-field', 4
 updateCardsInputValue(false, 'btn-check-trigonometry', 'trigonometry-input-field', 2, 'trigonometry-unknown1', 'trigonometry-unknown2', 'trigonometry-input-unknown1', 'trigonometry-input-unknown2');
 
 
-// Calling the functions to calculate area of shapes and display in calculate area section
+// Calling the functions to solve problems of shapes and display in solved result section
 
-// calculateArea('btn-calculate-algebra', 'shape-algebra', 'algebra-base', 'algebra-height');
-// calculateArea('btn-calculate-arithmetic', 'shape-arithmetic', 'arithmetic-width', 'arithmetic-length');
-// calculateArea('btn-calculate-geometry', 'shape-geometry', 'geometry-base', 'geometry-height');
-// calculateArea('btn-calculate-coordinate', 'shape-coordinate', 'coordinate-d1', 'coordinate-d2');
-// calculateArea('btn-calculate-trigonometry', 'shape-trigonometry', 'trigonometry-p', 'trigonometry-base');
+solveProblem('btn-solve-algebra', 'category-algebra', 'algebra-unknown1', 'algebra-unknown2', 'algebra-unknown3');
+solveProblem('btn-solve-arithmetic', 'category-arithmetic', 'arithmetic-unknown1', 'arithmetic-unknown2');
+solveProblem('btn-solve-geometry', 'category-geometry', 'geometry-unknown1', 'geometry-unknown2');
+solveProblem('btn-solve-coordinate', 'category-coordinate', 'coordinate-unknown1', 'coordinate-unknown2', 'coordinate-unknown3', 'coordinate-unknown4');
+solveProblem('btn-solve-trigonometry', 'category-trigonometry', 'trigonometry-unknown1', 'trigonometry-unknown2');

@@ -27,7 +27,7 @@
                 <!-- Card Algebra -->
 
                 <div class="bg-[#f5d0fe] rounded pb-4 hover-random-bg">
-                    <h4 id="shape-triangle" class="text-3xl font-bold pt-4 text-center">Algebra</h4>
+                    <h4 id="category-algebra" class="text-3xl font-bold pt-4 text-center">Algebra</h4>
                     <div class="text-end pe-4 pb-6">
                         <button id="openIndexButton" type="button"
                             class="text-lg  bg-[#e879f9] text-white rounded-sm ps-3 pe-1 btn-calculate-triangle">index
@@ -40,9 +40,10 @@
                     <div class="ms-5">
                         <div>
                             <h5 class="inline me-1">
-                                <span class="text-lg font-bold">Problem : </span>If <span
-                                    id="algebra-unknown1">a</span>x<sup>2</sup> + <span id="algebra-unknown2">b</span>x
-                                + <span id="algebra-unknown3">c</span> = 0, then
+                                <span class="text-lg font-bold">Problem : </span>If <span id="algebra-unknown1"
+                                    class="font-bold">a</span>x<sup>2</sup> + <span id="algebra-unknown2"
+                                    class="font-bold">b</span>x
+                                + <span id="algebra-unknown3" class="font-bold">c</span> = 0, then
                                 find the value of x.
                             </h5>
                             <i id="btn-edit-algebra" class="fa-regular fa-pen-to-square text-xl text-green-500"
@@ -72,7 +73,7 @@
                             </i>
                         </div>
                         <div class="text-center">
-                            <button
+                            <button id="btn-solve-algebra"
                                 class="bg-[#e879f9] text-white py-1 rounded w-1/2 text-center text-lg font-semibold mt-6">
                                 Solve
                             </button>
@@ -83,7 +84,7 @@
                 <!-- Card Arithmetic -->
 
                 <div class="bg-[#f5d0fe] rounded pb-4 hover-random-bg">
-                    <h4 id="shape-triangle" class="text-3xl font-bold pt-4 text-center">Arithmetic</h4>
+                    <h4 id="category-arithmetic" class="text-3xl font-bold pt-4 text-center">Arithmetic</h4>
                     <div class="text-end pe-4 pb-6">
                         <button id="openIndexButton" type="button"
                             class="text-lg  bg-[#e879f9] text-white rounded-sm ps-3 pe-1 btn-calculate-triangle">index
@@ -97,7 +98,8 @@
                         <div>
                             <h5 class="inline me-1">
                                 <span class="text-lg font-bold">Problem : </span>If x % of <span
-                                    id="arithmetic-unknown1">y</span> is <span id="arithmetic-unknown2">z</span> then
+                                    id="arithmetic-unknown1" class="font-bold">y</span> is <span
+                                    id="arithmetic-unknown2" class="font-bold">z</span> then
                                 find the value of
                                 x.
                             </h5>
@@ -123,7 +125,7 @@
                             </i>
                         </div>
                         <div class="text-center">
-                            <button
+                            <button id="btn-solve-arithmetic"
                                 class="bg-[#e879f9] text-white py-1 rounded w-1/2 text-center text-lg font-semibold mt-6">
                                 Solve
                             </button>
@@ -134,7 +136,7 @@
                 <!-- Card Geometry -->
 
                 <div class="bg-[#f5d0fe] rounded pb-4 hover-random-bg">
-                    <h4 id="shape-triangle" class="text-3xl font-bold pt-4 text-center">Geometry</h4>
+                    <h4 id="category-geometry" class="text-3xl font-bold pt-4 text-center">Geometry</h4>
                     <div class="text-end pe-4 pb-6">
                         <button id="openIndexButton" type="button"
                             class="text-lg  bg-[#e879f9] text-white rounded-sm ps-3 pe-1 btn-calculate-triangle">index
@@ -148,8 +150,8 @@
                         <div>
                             <h5 class="inline me-1">
                                 <span class="text-lg font-bold">Problem : </span>The radius of a cylindrical pipe is
-                                <span id="geometry-unknown1">r</span>
-                                and height is <span id="geometry-unknown2">h</span>,
+                                <span id="geometry-unknown1" class="font-bold">r</span>
+                                and height is <span id="geometry-unknown2" class="font-bold">h</span>,
                                 find the volume V.
                             </h5>
                             <i id="btn-edit-geometry" class="fa-regular fa-pen-to-square text-xl text-green-500"
@@ -174,7 +176,7 @@
                             </i>
                         </div>
                         <div class="text-center">
-                            <button
+                            <button id="btn-solve-geometry"
                                 class="bg-[#e879f9] text-white py-1 rounded w-1/2 text-center text-lg font-semibold mt-6">
                                 Solve
                             </button>
@@ -185,7 +187,7 @@
                 <!-- Card Coordinate Geometry -->
 
                 <div class="bg-[#f5d0fe] rounded pb-4 hover-random-bg">
-                    <h4 id="shape-triangle" class="text-3xl font-bold pt-4 text-center">Coordinate Geometry</h4>
+                    <h4 id="category-coordinate" class="text-3xl font-bold pt-4 text-center">Coordinate Geometry</h4>
                     <div class="text-end pe-4 pb-6">
                         <button id="openIndexButton" type="button"
                             class="text-lg  bg-[#e879f9] text-white rounded-sm ps-3 pe-1 btn-calculate-triangle">index
@@ -199,10 +201,10 @@
                         <div>
                             <h5 class=" inline me-1">
                                 <span class="text-lg font-bold">Problem : </span>The coordinate of two points A and B is
-                                (<span id="coordinate-unknown1">x<sub>1</sub></span>,<span
-                                    id="coordinate-unknown2">y<sub>1</sub></span>) and (<span
-                                    id="coordinate-unknown3">x<sub>2</sub></span>,<span
-                                    id="coordinate-unknown4">y<sub>2</sub></span>) respectively, then
+                                (<span id="coordinate-unknown1" class="font-bold">x<sub>1</sub></span>,<span
+                                    id="coordinate-unknown2" class="font-bold">y<sub>1</sub></span>) and (<span
+                                    id="coordinate-unknown3" class="font-bold">x<sub>2</sub></span>,<span
+                                    id="coordinate-unknown4" class="font-bold">y<sub>2</sub></span>) respectively, then
                                 find the distance of AB.
                             </h5>
                             <i id="btn-edit-coordinate" class="fa-regular fa-pen-to-square text-xl text-green-500"
@@ -232,7 +234,7 @@
                             </i>
                         </div>
                         <div class="text-center">
-                            <button
+                            <button id="btn-solve-coordinate"
                                 class="bg-[#e879f9] text-white py-1 rounded w-1/2 text-center text-lg font-semibold mt-6">
                                 Solve
                             </button>
@@ -243,7 +245,7 @@
                 <!-- Card Trigonometry -->
 
                 <div class="bg-[#f5d0fe] rounded pb-4 hover-random-bg">
-                    <h4 id="shape-triangle" class="text-3xl font-bold pt-4 text-center">Trigonometry</h4>
+                    <h4 id="category-trigonometry" class="text-3xl font-bold pt-4 text-center">Trigonometry</h4>
                     <div class="text-end pe-4 pb-6">
                         <button id="openIndexButton" type="button"
                             class="text-lg  bg-[#e879f9] text-white rounded-sm ps-3 pe-1 btn-calculate-triangle">index
@@ -257,8 +259,10 @@
                         <div>
                             <h5 class="inline me-1">
                                 <span class="text-lg font-bold">Problem : </span>The height of a pillar is h feet, it's
-                                length of shadow is <span id="trigonometry-unknown1">b</span> feet and the angle between
-                                shadow-length and hypotenus is <span id="trigonometry-unknown2">&theta;</span>.
+                                length of shadow is <span id="trigonometry-unknown1" class="font-bold">b</span> feet and
+                                the angle between
+                                shadow-length and hypotenus is <span id="trigonometry-unknown2"
+                                    class="font-bold">&theta;</span> degree.
                                 find the value of h.
                             </h5>
                             <i id="btn-edit-trigonometry" class="fa-regular fa-pen-to-square text-xl text-green-500"
@@ -283,7 +287,7 @@
                             </i>
                         </div>
                         <div class="text-center">
-                            <button
+                            <button id="btn-solve-trigonometry"
                                 class="bg-[#e879f9] text-white py-1 rounded w-1/2 text-center text-lg font-semibold mt-6">
                                 Solve
                             </button>
@@ -320,7 +324,7 @@
                     class="text-3xl font-bold underline decoration-2 decoration-double decoration-[#e879f9] mx-auto text-center pt-3">
                     Solved Result
                 </h5>
-                <ol id="calculated-area-list" class="ms-10 my-6 text-gray-400 list-decimal">
+                <ol id="solved-result-list" class="ms-10 my-6 text-gray-400 list-decimal">
 
                 </ol>
             </div>
