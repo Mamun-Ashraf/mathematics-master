@@ -22,16 +22,9 @@ document.getElementById('closeIndexButton').addEventListener('click', function (
     modal.classList.add('hidden');
 });
 
-// document.getElementById('openIndexButton').addEventListener('click', function () {
-//     modal.classList.remove('hidden');
-// });
-
 const indexes = document.querySelectorAll('.openIndexButton');
 
-console.log(indexes);
-
 indexes.forEach(index => {
-    console.log(index);
     index.addEventListener('click', function () {
         modal.classList.remove('hidden');
     });
