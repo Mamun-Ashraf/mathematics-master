@@ -79,7 +79,7 @@ function solveProblem(btnSolveId, categoryNameId, unknownId1, unknownId2, unknow
                     if (!unknown3Value) {
                         alert('Please provide valid values');
                     }
-                    else if (d > 0) {
+                    else if (d < 0) {
                         alert('The Solution is not a Real Number')
                     }
                     else {
