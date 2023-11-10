@@ -1,36 +1,88 @@
-// {/* <div id="modal" class="fixed z-10 inset-0 overflow-y-auto hidden">
-//     <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
-//         {/* <!-- Background overlay --> */}
-//         <div class="fixed inset-0 transition-opacity" aria-hidden="true">
-//             <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
-//         </div>
+// Function for changing background color of cards
 
-//         {/* <!-- Modal content --> */}
+function getRandomColor() {
+    const red = Math.floor(Math.random() * 256);
+    const green = Math.floor(Math.random() * 256);
+    const blue = Math.floor(Math.random() * 256);
 
-//     </div>
-// </div> */}
+    return `rgb(${red},${green},${blue})`;
+}
+
+// To show and hide cards input field
+
+function updateCardsInputValue(isEdit, cardUpdateButtonId, cardInputFieldId, argumentsNumber, unknownId1, unknownId2, inputUnknownId1, inputUnknownId2, unknownId3, inputUnknownId3, unknownId4, inputUnknownId4) {
+    if (isEdit) {
+        document.getElementById(cardUpdateButtonId).addEventListener('click', function () {
+            const cardInputField = document.getElementById(cardInputFieldId);
+            cardInputField.classList.remove('hidden');
+            cardInputField.classList.add('grid');
+        })
+    }
+    else {
+
+        document.getElementById(cardUpdateButtonId).addEventListener('click', function () {
+            const cardInputField = document.getElementById(cardInputFieldId);
+            cardInputField.classList.add('hidden');
+            cardInputField.classList.remove('grid');
+
+            let unknown1, unknown2, unknown3, unknown4, inputUnknown1, inputUnknown2, inputUnknown3, inputUnknown4;
+
+            unknown1 = document.getElementById(unknownId1);
+            unknown2 = document.getElementById(unknownId2);
+
+            inputUnknown1 = document.getElementById(inputUnknownId1).value;
+            inputUnknown2 = document.getElementById(inputUnknownId2).value;
+
+            unknown1.innerText = inputUnknown1;
+            unknown2.innerText = inputUnknown2;
+
+            switch (argumentsNumber) {
+                case 2:
+                    break;
+
+                case 3:
+                    unknown3 = document.getElementById(unknownId3);
+
+                    inputUnknown3 = document.getElementById(inputUnknownId3).value;
+
+                    unknown3.innerText = inputUnknown3;
+                    break;
+
+                default:
+                    unknown3 = document.getElementById(unknownId3);
+                    unknown4 = document.getElementById(unknownId4);
+
+                    inputUnknown3 = document.getElementById(inputUnknownId3).value;
+                    inputUnknown4 = document.getElementById(inputUnknownId4).value;
+
+                    unknown3.innerText = inputUnknown3;
+                    unknown4.innerText = inputUnknown4;
+                    break;
+            }
+        })
+    }
+}
 
 
+//         document.getElementById(cardUpdateButtonId).addEventListener('click', function () {
+//             const cardInputField = document.getElementById(cardInputFieldId);
+//             cardInputField.classList.add('hidden');
+//             cardInputField.classList.remove('grid');
 
-const modal = document.getElementById('indexModal');
+//             const unknown1 = document.getElementById(unknownId1);
+//             const unknown2 = document.getElementById(unknownId2);
+//             const unknown3 = document.getElementById(unknownId3);
+//             const unknown4 = document.getElementById(unknownId4);
 
-document.getElementById('closeIndexButton').addEventListener('click', function () {
-    modal.classList.add('hidden');
-});
+//             const inputUnknown1 = document.getElementById(inputUnknownId1).value;
+//             const inputUnknown2 = document.getElementById(inputUnknownId2).value;
+//             const inputUnknown3 = document.getElementById(inputUnknownId3).value;
+//             const inputUnknown4 = document.getElementById(inputUnknownId4).value;
 
-document.getElementById('openIndexButton').addEventListener('click', function () {
-    modal.classList.remove('hidden');
-});
-
-// {/* <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
-//             <div class="bg-white p-4">
-//                 {/* <!-- Modal content goes here --> */}
-//                 <h2 class="text-lg font-semibold">Modal Title</h2>
-//                 <p>Modal content goes here.</p>
-//             </div>
-//             <div class="bg-white px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-//                 <button id="closeModal" type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm">
-//                     Close
-//                 </button>
-//             </div>
-//         </div> */}
+//             unknown1.innerText = inputUnknown1;
+//             unknown2.innerText = inputUnknown2;
+//             unknown3.innerText = inputUnknown3;
+//             unknown4.innerText = inputUnknown4;
+//         })
+//     }
+// }
